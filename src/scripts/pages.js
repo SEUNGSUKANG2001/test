@@ -24,17 +24,6 @@ export const pages = {
                 <p>Responsiveness & Error Reporting</p>
                 <button class="action-btn" onclick="window.router.navigateTo('phase3_feedback')">Start Phase 3</button>
             </div>
-
-            <div class="test-section">
-                <h3>④ Accumulated Flow (Flow)</h3>
-                <p>Consistency, Memory, & Context</p>
-                <button class="action-btn" onclick="window.router.navigateTo('phase4_flow')">Start Phase 4</button>
-            </div>
-
-            <div style="margin-top: 30px; border-top: 1px solid #eee; padding-top: 20px; opacity: 0.7;">
-                <h4>Legacy/Misc</h4>
-                <button onclick="window.router.navigateTo('mystery_test')">Hidden/Lost Test</button>
-            </div>
         `
     },
 
@@ -57,72 +46,9 @@ export const pages = {
             </div>
 
             <div class="test-section">
-                <h3>2. Real World Match (Confusing Icons)</h3>
-                <button title="Search" style="font-size: 1.5em; border:1px solid #ccc; padding:5px;">💾</button>
-                <span><- This is "Search"</span>
-            </div>
-
-            <div class="test-section">
-                <h3>3. Static Control (No Location)</h3>
+                <h3>2. Static Control (No Location)</h3>
+                <p>브레드크럼(경로)이 없는 페이지는 사용자를 길을 잃게 만듭니다.</p>
                 <button class="action-btn" onclick="window.router.navigateTo('lost_page')">Go to 'No Breadcrumb' Page</button>
-            </div>
-
-            <div class="test-section">
-                <h3>4. Hidden System Status (State Violation)</h3>
-                
-                <p><strong>A. Invisible Selection:</strong> Click an item. Which one is selected?</p>
-                <div style="border: 1px solid #ccc; padding: 10px; width: 200px;">
-                    <ul style="list-style: none; padding: 0; margin: 0; cursor: pointer;">
-                        <li onclick="alert('Item 1 Selected (No Visual Change)')" style="padding: 5px; border-bottom: 1px solid #eee;">Option 1</li>
-                        <li onclick="alert('Item 2 Selected (No Visual Change)')" style="padding: 5px; border-bottom: 1px solid #eee;">Option 2</li>
-                        <li onclick="alert('Item 3 Selected (No Visual Change)')" style="padding: 5px;">Option 3</li>
-                    </ul>
-                </div>
-
-                <!-- Mystery Filter Removed -->
-
-
-            </div>
-        `
-    },
-    phase1_login_status: {
-        id: 'phase1_login_status',
-        title: 'Ambiguous Login Status',
-        parent: 'phase1_analyze',
-        showLocation: true,
-        onEnter: () => {
-            // Hide global user status bar ONLY for this page
-            const userBar = document.querySelector('.user-bar');
-            if (userBar) userBar.style.display = 'none';
-        },
-        onLeave: () => {
-            // Restore global user status bar
-            const userBar = document.querySelector('.user-bar');
-            if (userBar) userBar.style.display = 'flex';
-        },
-        content: `
-            <h2>Am I Logged In?</h2>
-            
-            <!-- Violation: User Bar is hidden or misleading on this specific page -->
-
-            <div style="background: #f0f0f0; padding: 20px; border-radius: 8px;">
-                <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #ccc; padding-bottom: 10px; margin-bottom: 20px;">
-                    <span style="font-size: 1.2em; font-weight: bold;">My Account</span>
-                    <!-- Misleading Status -->
-                    <span style="color: #666;">Status: Guest (Not Logged In)</span>
-                </div>
-
-                <p>Welcome back! You have <strong>5</strong> new messages.</p>
-                
-                <div style="margin-top: 20px;">
-                    <button class="action-btn" onclick="alert('Proceeding to Checkout... (Wait, am I logged in?)')">Checkout</button>
-                    <button style="margin-left: 10px; background: #ccc; border:none; padding:8px;" onclick="window.router.navigateTo('phase1_analyze')">Back</button>
-                </div>
-                
-                <div style="margin-top: 30px; border-top: 1px solid #ddd; padding-top: 10px; font-size: 0.9em; color: red;">
-                    VIOLATION: The top-right global login status is missing. You have no idea if you are logged in or not.
-                    <br>And the page content confuses you with "My Account" vs "Guest".
-                </div>
             </div>
         `
     },
@@ -151,21 +77,6 @@ export const pages = {
                 <p>이번 테스트는 <strong>목표물까지 도달하는 거리(단계)</strong>를 극대화했습니다.</p>
                 <br>
                 <button class="action-btn" onclick="window.router.navigateTo('phase2_depth1')">다단계 작업 시작하기 (Depth 1)</button>
-            </div>
-
-            <div class="test-section">
-                <h3>2. Inefficient Flow</h3>
-                <button onclick="alert('Step 1 -> Step 2 -> Step 3 -> Done')">Start 4-Step Delete</button>
-            </div>
-
-            <div class="test-section">
-                <h3>3. Safety (Error Prevention)</h3>
-                <div class="safety-hazards">
-                    <button class="btn-primary">Save</button>
-                    <button class="btn-danger-stealth" onclick="alert('Deleted!')">Delete</button>
-                </div>
-                <div style="margin-top:10px;">
-                    <button onclick="alert('Account Deleted IMMEDIATELY')">No Undo Button</button>
                 </div>
             </div>
         `
@@ -385,104 +296,4 @@ export const pages = {
         `
     },
 
-    // ==========================================
-    // Phase 4: Accumulated Flow (NEW)
-    // ==========================================
-    phase4_flow: {
-        id: 'phase4_flow',
-        title: 'Phase 4: Flow',
-        parent: 'dashboard',
-        showLocation: true,
-        content: `
-            <h2>Phase 4: Accumulated Flow</h2>
-
-            <!-- 1. Consistency -->
-            <div class="test-section">
-                <h3>1. Consistency (Layout Shift)</h3>
-                <p>Notice how the 'Next' button switches sides unpredictably.</p>
-                <div id="wizard-container" class="wizard-step">
-                    <h4>Step 1</h4>
-                    <p>Read this intro.</p>
-                    <div class="wizard-footer buttons-normal">
-                        <button disabled>Back</button>
-                        <button onclick="window.router.navigateTo('phase4_step2')">Next Step ></button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 2. Recognition vs Recall -->
-            <div class="test-section">
-                <h3>2. Recognition vs Recall</h3>
-                <p>Memorize this code: <strong class="memory-box">XJ-92</strong></p>
-                <button class="action-btn" onclick="window.router.navigateTo('phase4_recall')">Go to Next Step</button>
-            </div>
-
-            <!-- 3. Context Flexibility -->
-            <div class="test-section">
-                <h3>3. Context Flexibility (State Loss)</h3>
-                <div class="fragile-form">
-                    <label>Enter lengthy comment:</label>
-                    <input type="text" placeholder="Type here..." id="fragile-input">
-                    <div class="fragile-warning">Warning: If you click 'Info' and come back, this text disappears.</div>
-                    <button onclick="window.router.navigateTo('phase4_info')">View Info (Loses Data)</button>
-                </div>
-            </div>
-        `
-    },
-
-    // Phase 4 Helpers
-    phase4_step2: {
-        id: 'phase4_step2',
-        title: 'Wizard Step 2',
-        parent: 'phase4_flow',
-        showLocation: true,
-        content: `
-            <div class="wizard-step">
-                <h4>Step 2</h4>
-                <p>Layout changed! 'Next' is now on the left?</p>
-                <div class="wizard-footer buttons-reversed">
-                    <button onclick="window.router.navigateTo('phase4_flow')">< Back</button>
-                    <button onclick="alert('Done')">Finish ></button>
-                </div>
-            </div>
-        `
-    },
-    phase4_recall: {
-        id: 'phase4_recall',
-        title: 'Recall Test',
-        parent: 'phase4_flow',
-        showLocation: true,
-        content: `
-            <h2>Recall Required</h2>
-            <label>What was the code on the previous page?</label>
-            <input type="text" placeholder="Hint: It started with X...">
-            <button onclick="alert('Did you remember?')">Submit</button>
-            <br><br>
-            <button onclick="window.router.navigateTo('phase4_flow')">I forgot, go back</button>
-        `
-    },
-    phase4_info: {
-        id: 'phase4_info',
-        title: 'Info Page',
-        parent: 'phase4_flow',
-        showLocation: true,
-        content: `
-            <h2>Info Page</h2>
-            <p>You have left the form. The state was not saved.</p>
-            <button onclick="window.router.navigateTo('phase4_flow')">Back to Form (Empty)</button>
-        `
-    },
-
-    // Mystery Test kept separate
-    mystery_test: {
-        id: 'mystery_test',
-        title: 'Unknown Structure',
-        parent: 'dashboard',
-        showLocation: false,
-        content: `
-            <h2>Where am I?</h2>
-            <p>No breadcrumbs. Random navigation.</p>
-            <button onclick="window.router.navigateTo('dashboard')">Go Home (Maybe)</button>
-        `
-    }
-};
+}
