@@ -1,0 +1,161 @@
+/* Ghost Action (No Feedback) */
+.ghost-btn {
+    background-color: #6c757d;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.ghost-btn:active {
+    /* No visual feedback on click */
+    transform: none;
+    box-shadow: none;
+}
+
+/* Unclear Processing State */
+.mystery-loader {
+    width: 50px;
+    height: 50px;
+    background-color: #eee;
+    margin: 20px auto;
+    display: none;
+    /* Hidden by default */
+    /* No animation, just a static box appearing */
+    line-height: 50px;
+    text-align: center;
+    font-size: 12px;
+    color: #ccc;
+}
+
+/* Bad Error Messages */
+.error-box {
+    border: 1px solid #ff0000;
+    background-color: #ffe6e6;
+    padding: 15px;
+    margin-top: 10px;
+    color: #cc0000;
+    font-family: monospace;
+    display: none;
+}
+
+.vague-error {
+    border: 1px solid #ccc;
+    background-color: #f8f8f8;
+    padding: 15px;
+    margin-top: 10px;
+    color: #333;
+    display: none;
+}
+
+/* ========================================= */
+/* NEW: Phase 3 Restructuring Styles        */
+/* ========================================= */
+
+.feedback-demo-container {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    margin-top: 10px;
+}
+
+.feedback-column {
+    flex: 1;
+    border: 1px dashed #ccc;
+    padding: 15px;
+    background: #fafafa;
+}
+
+.feedback-column h4 {
+    margin-top: 0;
+    font-size: 0.9em;
+    color: #666;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+/* Feedback Buttons */
+.btn-feedback-bad {
+    width: 100%;
+    padding: 10px;
+    background: #6c757d;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-feedback-good {
+    width: 100%;
+    padding: 10px;
+    background: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-feedback-good:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+/* Progress vs Spinner */
+.spinner-area {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.spinner {
+    width: 20px;
+    height: 20px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    display: none; /* Hidden by default */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.progress-container {
+    width: 100%;
+    background-color: #ddd;
+    height: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 10px;
+    display: none; /* Hidden by default */
+}
+
+.progress-bar {
+    width: 0%;
+    height: 100%;
+    background-color: #28a745;
+    text-align: center;
+    line-height: 20px;
+    color: white;
+    font-size: 10px;
+    transition: width 0.1s linear;
+}
+
+/* Status Messages */
+.status-msg {
+    margin-top: 5px;
+    font-weight: bold;
+    text-align: center;
+    min-height: 20px;
+}
+
+.status-success {
+    color: #28a745;
+}
+
+.status-fail {
+    color: #dc3545;
+}

@@ -1,0 +1,245 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 0;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+
+#main-header {
+    background-color: #333;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.login-ui input {
+    padding: 5px;
+    margin-right: 5px;
+}
+
+.login-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+.logout-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.user-status {
+    font-weight: bold;
+    color: #ffd700;
+    /* Gold */
+}
+
+.content-wrapper {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.test-section {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    border-bottom: 2px solid #eee;
+    padding-bottom: 5px;
+}
+
+h3 {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-size: 1.1em;
+    color: #555;
+}
+
+/* Existing Violation Styles */
+.div-btn,
+.span-link,
+.bad-disabled {
+    margin: 5px;
+    padding: 5px;
+    display: inline-block;
+    background: #eee;
+}
+
+.div-btn {
+    background: blue;
+    color: white;
+}
+
+.empty-btn {
+    width: 30px;
+    height: 30px;
+    background: red;
+}
+
+.bad-disabled {
+    background: green;
+    color: white;
+    border: none;
+}
+
+.bad-cursor-disabled {
+    cursor: pointer;
+    background: grey;
+    color: white;
+    padding: 5px;
+}
+
+.bad-cursor-enabled {
+    cursor: not-allowed;
+    background: teal;
+    color: white;
+    padding: 5px;
+}
+
+.tiny-btn {
+    width: 20px;
+    height: 20px;
+    font-size: 8px;
+}
+
+.low-contrast-text {
+    color: #ccc;
+    background: white;
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.bg-container {
+    background: white;
+    padding: 10px;
+    border: 1px dashed #999;
+}
+
+.low-contrast-bg {
+    background: #f0f0f0;
+    color: black;
+    border: none;
+    padding: 5px;
+}
+
+.invisible-btn {
+    background: transparent;
+    border: none;
+    color: black;
+    text-decoration: underline;
+}
+
+/* System Status Styles */
+.breadcrumb {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 5px;
+}
+
+.breadcrumb li::after {
+    content: ">";
+    margin-left: 5px;
+    color: #999;
+}
+
+.breadcrumb li:last-child::after {
+    content: "";
+}
+
+.stepper {
+    display: flex;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.step {
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    background: #eee;
+}
+
+.step.active {
+    background: #007bff;
+    color: white;
+    font-weight: bold;
+    border-color: #0056b3;
+}
+
+.step.completed {
+    background: #d4edda;
+    color: #155724;
+}
+
+.toggle-btn {
+    padding: 10px 20px;
+    border: 1px solid #aaa;
+    cursor: pointer;
+    background: #e2e6ea;
+}
+
+.toggle-btn.active {
+    background: #007bff;
+    color: white;
+    border-color: #0056b3;
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+
+.status-pass {
+    border-left: 5px solid #28a745;
+    padding-left: 10px;
+}
+
+.status-fail {
+    border-left: 5px solid #dc3545;
+    padding-left: 10px;
+    opacity: 0.7;
+}
+
+/* Nav Links */
+.nav-link {
+    margin-right: 10px;
+    text-decoration: none;
+    color: blue;
+}
+
+.nav-link.active {
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+    cursor: default;
+}
+
+.tab {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    background: #f8f9fa;
+    cursor: pointer;
+}
+
+.tab.active-tab {
+    background: white;
+    border-bottom: 2px solid blue;
+    font-weight: bold;
+}

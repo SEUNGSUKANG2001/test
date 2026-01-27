@@ -1,0 +1,52 @@
+/* Phase 4: Flow & Consistency Violations */
+
+/* Inconsistent Layouts */
+.wizard-step {
+    border: 1px solid #ddd;
+    padding: 20px;
+    background: #fff;
+    margin-top: 10px;
+    border-radius: 8px;
+}
+
+.wizard-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+}
+
+/* Shifting Buttons: Classes to swap order visually */
+.buttons-normal {
+    flex-direction: row;
+}
+
+.buttons-reversed {
+    flex-direction: row-reverse;
+    /* Swaps Back/Next positions */
+}
+
+/* Recall Test */
+.memory-box {
+    background: #e9ecef;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+}
+
+/* Context Loss */
+.fragile-form {
+    border: 1px solid red;
+    padding: 15px;
+    background: #fff5f5;
+}
+
+.fragile-warning {
+    color: red;
+    font-size: 0.8em;
+    margin-top: 5px;
+}
